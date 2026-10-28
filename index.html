@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wiener Weihnachtszauber | Festliche Dekoration für Lokale in Wien | Savelij & Sebastian</title>
+  <meta name="description" content="Wir verwandeln Ihr Lokal in Wien in ein echtes Weihnachtswunder. Stilvolle Weihnachtsdekoration von Savelij & Sebastian (Uni Wien) für Cafés, Bars, Restaurants und Boutiquen – unkompliziert, persönlich & bezahlbar.">
+  
+  <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Snowfall Canvas (Background) -->
+  <canvas id="snow-canvas" aria-hidden="true"></canvas>
+
+  <!-- Top Announcement Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-content">
+      <span>✨ <strong>Wiener Advent 2026:</strong> Jetzt Deko-Termine bei Savelij & Sebastian sichern!</span>
+      <a href="#kontakt" class="top-bar-link">Termin anfragen →</a>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo">
+        <span class="logo-icon">🎄</span>
+        <div class="logo-text">
+          <span class="logo-title">Weihnachtszauber</span>
+          <span class="logo-sub">Wien · Savelij & Sebastian</span>
+        </div>
+      </a>
+
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#ueber-uns" class="nav-link">Über uns</a>
+        <a href="#beispiele" class="nav-link">Beispiele & Galerie</a>
+        <a href="#leistungen" class="nav-link">Leistungen</a>
+        <a href="#ablauf" class="nav-link">Ablauf</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="https://wa.me/4366565154851?text=Hallo%20Savelij%20%26%20Sebastian!%20Wir%20haben%20ein%20Lokal%20in%20Wien%20und%20interessieren%20uns%20f%C3%BCr%20eine%20Weihnachtsdekoration." target="_blank" rel="noopener" class="btn btn-whatsapp nav-cta">
+          <span>💬 WhatsApp Chat</span>
+        </a>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="snow-toggle" class="snow-toggle-btn" title="Schnee ein-/ausschalten" aria-label="Schnee umschalten">
+          <span class="snow-icon">❄️</span>
+        </button>
+        <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menü öffnen">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container hero-container">
+      <div class="hero-badge">
+        <span class="badge-star">✦</span> Exklusiver Deko-Service für Wien & Umgebung
+      </div>
+      <h1 class="hero-title">
+        Wir verwandeln Ihr Lokal in ein echtes <em>Weihnachtswunder</em>.
+      </h1>
+      <p class="hero-subtitle">
+        Stilvolle, handgemachte Weihnachtsdekoration für Cafés, Bars, Restaurants und Boutiquen in Wien. 
+        Als motivierte Uni-Wien-Studenten übernehmen wir für Sie den kompletten Aufbau – unkompliziert, zügig und zu fairen Konditionen.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://wa.me/4366565154851?text=Hallo%20Savelij%20%26%20Sebastian!%20Wir%20haben%20ein%20Lokal%20in%20Wien%20und%20interessieren%20uns%20f%C3%BCr%20eine%20Weihnachtsdekoration." target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+          <span class="wa-icon">💬</span>
+          <span class="btn-text">Direkt auf WhatsApp schreiben</span>
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="#beispiele" class="btn btn-secondary btn-lg">
+          <span>✨ Unsere Beispiele ansehen</span>
+        </a>
+      </div>
+
+      <!-- Trust Badges -->
+      <div class="hero-highlights">
+        <div class="highlight-item">
+          <div class="hl-icon">🎓</div>
+          <div class="hl-text">
+            <strong>Savelij & Sebastian (20)</strong>
+            <span>Studenten an der Uni Wien</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="hl-icon">⚡</div>
+          <div class="hl-text">
+            <strong>Schnell & Stressfrei</strong>
+            <span>Aufbau meist in 2–4 Stunden</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="hl-icon">✨</div>
+          <div class="hl-text">
+            <strong>Individueller Stil</strong>
+            <span>Passend zum Charakter Ihres Lokals</span>
+          </div>
+        </div>
+        <div class="highlight-item">
+          <div class="hl-icon">🇦🇹</div>
+          <div class="hl-text">
+            <strong>Ganz Wien mobil</strong>
+            <span>Vom 1. bis zum 23. Bezirk</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section ("Über uns") -->
+  <section class="section about-section" id="ueber-uns">
+    <div class="container">
+      <div class="about-grid">
+        
+        <!-- Team Photo Frame -->
+        <div class="about-image-wrapper">
+          <div class="image-frame-backdrop"></div>
+          <div class="image-frame">
+            <img src="team.jpeg" alt="Savelij und Sebastian - Uni Wien Studenten für Weihnachtsdekoration" class="team-photo" loading="lazy">
+            <div class="photo-badge">
+              <span class="badge-icon">🎓</span>
+              <span>Savelij & Sebastian · Uni Wien</span>
+            </div>
+          </div>
+          <div class="team-quote-bubble">
+            <p>„Wir lieben die Wiener Vorweihnachtszeit und möchten jedes Schaufenster zum Strahlen bringen!“</p>
+          </div>
+        </div>
+
+        <!-- Team Description -->
+        <div class="about-content">
+          <div class="section-label">ÜBER UNS · SAVELIJ & SEBASTIAN</div>
+          <h2 class="section-title">Servus! Wir sind Savelij und Sebastian.</h2>
+          
+          <div class="gold-divider">✦ ✦ ✦</div>
+
+          <p class="lead-text">
+            Wir sind beide 20 Jahre alt, studieren an der Universität Wien und teilen eine große Begeisterung für schöne Ästhetik und die festliche Atmosphäre unserer Stadt im Advent.
+          </p>
+          
+          <p class="body-text">
+            Als Gäste kennen und schätzen wir die Vielfalt der Wiener Kaffeehäuser, Weinbars, Restaurants und Boutiquen. Doch wir wissen auch: Für Betreiber und Gastronomen ist die Vorweihnachtszeit oft pure Hektik. Zwischen Wareneinkauf, Reservierungen und vollem Betrieb bleibt einfach keine Zeit mehr, sich um Lichterketten, Tannenzweige und stimmungsvolle Deko zu kümmern.
+          </p>
+
+          <p class="body-text">
+            <strong>Genau hier packen wir für Sie an:</strong> Zu zweit kommen wir direkt zu Ihnen ins Lokal, bringen Material und kreative Ideen mit und schaffen innerhalb weniger Stunden ein warmes, festliches Ambiente, das Ihre Gäste begeistert und zum Verweilen einlädt.
+          </p>
+
+          <ul class="about-benefits">
+            <li>
+              <span class="benefit-check">✓</span>
+              <div>
+                <strong>100% Persönlich & Nahbar:</strong> Sie haben immer direkt mit uns beiden zu tun – keine unpersönliche Großagentur, keine Umwege.
+              </div>
+            </li>
+            <li>
+              <span class="benefit-check">✓</span>
+              <div>
+                <strong>Faire Studenten-Pauschalen:</strong> Transparente, bezahlbare Preise, die auch für kleinere Betriebe und junge Boutiquen absolut leistbar sind.
+              </div>
+            </li>
+            <li>
+              <span class="benefit-check">✓</span>
+              <div>
+                <strong>Stressfrei für Sie:</strong> Wir dekorieren gerne morgens vor dem Aufsperren oder am Ruhetag – sauber, zuverlässig und zügig.
+              </div>
+            </li>
+          </ul>
+
+          <div class="about-cta-row">
+            <a href="#beispiele" class="btn btn-secondary">
+              <span>✨ Unsere Dekorationen ansehen</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Examples / Gallery Section ("Was wir können") -->
+  <section class="section gallery-section" id="beispiele">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-label">BEISPIELE UNSERER ARBEIT</div>
+        <h2 class="section-title">Was wir für Ihr Lokal zaubern können</h2>
+        <p class="section-subtitle">
+          Von stimmungsvollen Schaufenstern über festliche Theken bis hin zu gemütlichen Wohlfühlecken – hier sehen Sie Beispiele für Dekorationen, die wir zügig, geschmackvoll und ohne Chaos bei Ihnen umsetzen.
+        </p>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="gallery-filters" id="gallery-filters">
+        <button class="filter-btn active" data-filter="all">Alle Beispiele</button>
+        <button class="filter-btn" data-filter="schaufenster">Schaufenster & Fassade</button>
+        <button class="filter-btn" data-filter="innenraum">Innenbereich & Bar</button>
+        <button class="filter-btn" data-filter="details">Akzente & Beleuchtung</button>
+      </div>
+
+      <!-- Gallery Grid -->
+      <div class="gallery-grid" id="gallery-grid">
+        
+        <!-- Example 1: dek1 -->
+        <article class="gallery-card" data-category="schaufenster">
+          <div class="card-image-box" onclick="openLightbox('dek1.jpeg', 'Festlicher Eingangsbereich & Schaufensterbogen')">
+            <img src="dek1.jpeg" alt="Beispiel 1: Festliche Weihnachtsdekoration Eingangsbereich" loading="lazy">
+            <div class="card-overlay">
+              <span class="zoom-btn" title="Großansicht">🔍 Vergrößern</span>
+            </div>
+            <div class="card-tag">Eingang & Schaufenster</div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Festliches Entree mit Tannengirlande</h3>
+            <p class="card-desc">Warme Lichterketten, dichte Tannengirlanden und elegante rote Akzente, die Vorbeigehende sofort magisch anziehen.</p>
+            <div class="card-meta">
+              <span class="meta-tag">✨ Schnell realisierbar</span>
+              <span class="meta-tag">🎄 Blickfang von der Straße</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Example 2: dek2 -->
+        <article class="gallery-card" data-category="innenraum">
+          <div class="card-image-box" onclick="openLightbox('dek2.jpeg', 'Stimmungsvolle Tisch- und Thekendekoration')">
+            <img src="dek2.jpeg" alt="Beispiel 2: Gastronomie Innenraum Dekoration" loading="lazy">
+            <div class="card-overlay">
+              <span class="zoom-btn" title="Großansicht">🔍 Vergrößern</span>
+            </div>
+            <div class="card-tag">Gastraum & Theke</div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Gemütliche Bar- & Tischakzente</h3>
+            <p class="card-desc">Festliche Tischläufer, Kerzenarrangements und edle Akzente für Restaurants, Weinbars und Cafés.</p>
+            <div class="card-meta">
+              <span class="meta-tag">🕯️ Warmes Ambiente</span>
+              <span class="meta-tag">🍷 Ideal für Gastronomie</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Example 3: dek3 -->
+        <article class="gallery-card" data-category="details">
+          <div class="card-image-box" onclick="openLightbox('dek3.jpeg', 'Klassischer Weihnachtsbaum & Goldene Details')">
+            <img src="dek3.jpeg" alt="Beispiel 3: Klassischer Christbaum und Details" loading="lazy">
+            <div class="card-overlay">
+              <span class="zoom-btn" title="Großansicht">🔍 Vergrößern</span>
+            </div>
+            <div class="card-tag">Klassische Eleganz</div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Klassischer Christbaum & Goldglanz</h3>
+            <p class="card-desc">Perfekt aufeinander abgestimmte Kugeln, Bänder und Lichtfarben – für ein harmonisches Gesamtbild im Raum.</p>
+            <div class="card-meta">
+              <span class="meta-tag">⭐ Edle Farbharmonie</span>
+              <span class="meta-tag">📸 Beliebter Fotospot</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Example 4: dek4 -->
+        <article class="gallery-card" data-category="schaufenster">
+          <div class="card-image-box" onclick="openLightbox('dek4.jpeg', 'Elegante Fensterbeleuchtung & Sterne')">
+            <img src="dek4.jpeg" alt="Beispiel 4: Schaufenster Beleuchtung und Sterne" loading="lazy">
+            <div class="card-overlay">
+              <span class="zoom-btn" title="Großansicht">🔍 Vergrößern</span>
+            </div>
+            <div class="card-tag">Schaufenster</div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Strahlende Schaufenster-Arrangements</h3>
+            <p class="card-desc">Beleuchtete Sterne, hängende Ornamente und zarte Winterdetails, die auch aus der Ferne im Dunkeln glänzen.</p>
+            <div class="card-meta">
+              <span class="meta-tag">✨ Maximale Fernwirkung</span>
+              <span class="meta-tag">🛍️ Perfekt für Boutiquen</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Example 5: dek5.jpeg -->
+        <article class="gallery-card" data-category="innenraum">
+          <div class="card-image-box" onclick="openLightbox('dek5.jpeg', 'Warme Kamin- und Loungebereiche')">
+            <img src="dek5.jpeg" alt="Beispiel 5: Warme Lounge Dekoration" loading="lazy">
+            <div class="card-overlay">
+              <span class="zoom-btn" title="Großansicht">🔍 Vergrößern</span>
+            </div>
+            <div class="card-tag">Lounge & Gemütlichkeit</div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Warme Lounge- & Wohlfühlecken</h3>
+            <p class="card-desc">Kombination aus warmem Kerzenlicht, Tannenduft und winterlichen Details für maximalen Komfort Ihrer Gäste.</p>
+            <div class="card-meta">
+              <span class="meta-tag">☕ Hohe Verweildauer</span>
+              <span class="meta-tag">❄️ Winterliche Wärme</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Example 6: dek5.jpg (Boutique Window) -->
+        <article class="gallery-card" data-category="schaufenster">
+          <div class="card-image-box" onclick="openLightbox('dek5.jpg', 'Kompakte Schaufensterdekoration')">
+            <img src="dek5.jpg" alt="Beispiel 6: Kompakte Schaufensterdekoration" loading="lazy">
+            <div class="card-overlay">
+              <span class="zoom-btn" title="Großansicht">🔍 Vergrößern</span>
+            </div>
+            <div class="card-tag">Boutiquen & Stores</div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Kompakte Store-Dekoration</h3>
+            <p class="card-desc">Sinnvoll eingesetzte Dekoelemente auf begrenztem Raum, damit Ihre Produkte im Mittelpunkt bleiben.</p>
+            <div class="card-meta">
+              <span class="meta-tag">📦 Platzsparend</span>
+              <span class="meta-tag">🎯 Verkaufsfördernd</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Example 7: dek6.jpg (Hängende Akzente) -->
+        <article class="gallery-card" data-category="details">
+          <div class="card-image-box" onclick="openLightbox('dek6.jpg', 'Hängende Girlanden & Deckenakzente')">
+            <img src="dek6.jpg" alt="Beispiel 7: Decken- und Girlanden Dekoration" loading="lazy">
+            <div class="card-overlay">
+              <span class="zoom-btn" title="Großansicht">🔍 Vergrößern</span>
+            </div>
+            <div class="card-tag">Decken & Details</div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Hängende Tannengirlanden & Deckenakzente</h3>
+            <p class="card-desc">Nutzt die Höhe des Raumes – ideal für Lokale, in denen die Boden- und Tischfläche komplett frei bleiben muss.</p>
+            <div class="card-meta">
+              <span class="meta-tag">🌿 100% Freie Tischfläche</span>
+              <span class="meta-tag">✨ Raumgreifender Effekt</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Example 8: dek7.jpg (Natürliche Materialien) -->
+        <article class="gallery-card" data-category="details">
+          <div class="card-image-box" onclick="openLightbox('dek7.jpg', 'Natürliche Dekoelemente mit Tanne & Holz')">
+            <img src="dek7.jpg" alt="Beispiel 8: Natürliche Tanne und Holzdekoration" loading="lazy">
+            <div class="card-overlay">
+              <span class="zoom-btn" title="Großansicht">🔍 Vergrößern</span>
+            </div>
+            <div class="card-tag">Natürlich & Rustikal</div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Natürlicher Tannen- & Holzcharme</h3>
+            <p class="card-desc">Echtes Tannengrün, Zapfen, dezenter Glanz und Holzelemente für ein uriges, authentisches Alpen- und Wiengefühl.</p>
+            <div class="card-meta">
+              <span class="meta-tag">🌲 Frischer Tannenduft</span>
+              <span class="meta-tag">🪵 Zeitloser Stil</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Example 9: dek9.jpg (Innenraum & Bar) -->
+        <article class="gallery-card" data-category="innenraum">
+          <div class="card-image-box" onclick="openLightbox('dek9.jpg', 'Stimmungsvolle Gastraum- und Tischdekoration')">
+            <img src="dek9.jpg" alt="Beispiel 9: Festliche Gastraum und Tischdekoration" loading="lazy">
+            <div class="card-overlay">
+              <span class="zoom-btn" title="Großansicht">🔍 Vergrößern</span>
+            </div>
+            <div class="card-tag">Innenbereich & Bar</div>
+          </div>
+          <div class="card-content">
+            <h3 class="card-title">Festliche Gastraum- & Tischdekoration</h3>
+            <p class="card-desc">Stilvoll arrangierte Akzente, dezenter Lichterglanz und Tannenduft für eine gemütliche Wiener Kaffeehaus- und Baratmosphäre.</p>
+            <div class="card-meta">
+              <span class="meta-tag">🍷 Einladendes Ambiente</span>
+              <span class="meta-tag">🕯️ Warmes Licht</span>
+            </div>
+          </div>
+        </article>
+
+
+      </div>
+
+      <div class="gallery-footer-cta">
+        <p>💡 <strong>Haben Sie ein konkretes Beispielfoto oder eine eigene Idee im Kopf?</strong> Schicken Sie es uns einfach bei Ihrer Anfrage – wir setzen es für Sie um.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section ("Unsere Leistungen") -->
+  <section class="section services-section" id="leistungen">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-label">UNSERE LEISTUNGEN</div>
+        <h2 class="section-title">Alles aus einer Hand für Ihr Lokal</h2>
+        <p class="section-subtitle">
+          Wir bieten maßgeschneiderte Lösungen für Gastronomie, Cafés und Gewerbeflächen in ganz Wien.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        
+        <div class="service-card">
+          <div class="service-icon-box">🪟</div>
+          <h3 class="service-card-title">Schaufenster & Fassade</h3>
+          <p class="service-card-desc">
+            Das Schaufenster ist die Visitenkarte Ihres Geschäfts. Wir schaffen magische Auslagen mit Beleuchtung, Kränzen und Schneeeffekten, die Fußgänger zum Innehalten bringen.
+          </p>
+          <ul class="service-checklist">
+            <li>Lichterbögen & Girlanden</li>
+            <li>Festliche Beschriftung & Schneeeffekte</li>
+            <li>Hängende Sterne & Kugeln</li>
+          </ul>
+        </div>
+
+        <div class="service-card featured">
+          <div class="card-popular-badge">Sehr gefragt</div>
+          <div class="service-icon-box">🍸</div>
+          <h3 class="service-card-title">Gastraum & Bartheke</h3>
+          <p class="service-card-desc">
+            Vom Eingangsbereich bis zum Tresen: Wir bringen warmes Licht und Tannengrün in Ihren Gastraum, sodass sich Gäste sofort geborgen fühlen und länger bleiben.
+          </p>
+          <ul class="service-checklist">
+            <li>Girlanden entlang der Theke</li>
+            <li>Tischdeko & Windlichter</li>
+            <li>Festliche Deckenhänger & Bögen</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-box">🎄</div>
+          <h3 class="service-card-title">Christbäume & Fotospots</h3>
+          <p class="service-card-desc">
+            Bäume in passender Größe, stilsicher geschmückt. Perfekt als festlicher Mittelpunkt und als Fotomotiv für Social-Media-Stories Ihrer Gäste.
+          </p>
+          <ul class="service-checklist">
+            <li>Klassisch rot/gold oder modern weiß/silber</li>
+            <li>Sichere Aufstellung & Ausrichtung</li>
+            <li>Inklusive hochwertiger LED-Lichterketten</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-box">🧹</div>
+          <h3 class="service-card-title">Abbau-Service im Januar</h3>
+          <p class="service-card-desc">
+            Nach den Feiertagen müssen Sie sich um nichts kümmern: Auf Wunsch kommen wir Anfang Januar pünktlich wieder vorbei, bauen alles sauber ab und hinterlassen Ihr Lokal besenrein.
+          </p>
+          <ul class="service-checklist">
+            <li>Termingerechter Rückbau</li>
+            <li>Saubere Entsorgung oder Verpackung</li>
+            <li>Kein Zeitaufwand für Ihr Personal</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Process / How it works ("Ablauf") -->
+  <section class="section process-section" id="ablauf">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-label">EINFACHER ABLAUF</div>
+        <h2 class="section-title">In 3 Schritten zum Weihnachtswunder</h2>
+        <p class="section-subtitle">Ganz ohne bürokratischen Aufwand – direkt, flexibel und transparent.</p>
+      </div>
+
+      <div class="process-steps">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <h3 class="step-title">Foto per WhatsApp senden</h3>
+          <p class="step-desc">
+            Schicken Sie uns 1–2 Fotos von Ihrem Schaufenster oder Innenraum ganz unkompliziert direkt per WhatsApp.
+          </p>
+        </div>
+
+        <div class="step-arrow">→</div>
+
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <h3 class="step-title">Faire Pauschale vereinbaren</h3>
+          <p class="step-desc">
+            Wir schlagen Ihnen passende Deko-Ideen vor und nennen Ihnen sofort eine faire, transparente Pauschale ohne versteckte Kosten.
+          </p>
+        </div>
+
+        <div class="step-arrow">→</div>
+
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <h3 class="step-title">Wir rücken an & dekorieren</h3>
+          <p class="step-desc">
+            Wir bringen alles mit und dekorieren Ihr Lokal in 2 bis 4 Stunden fertig – gerne vor dem Aufsperren oder am Ruhetag!
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Us Banner -->
+  <section class="section why-us-section">
+    <div class="container">
+      <div class="why-us-box">
+        <div class="why-us-text">
+          <div class="badge-mini">Warum Savelij & Sebastian?</div>
+          <h2>Warum kleine Lokale in Wien uns wählen:</h2>
+          <div class="reasons-list">
+            <div class="reason-item">
+              <span class="reason-icon">💰</span>
+              <div>
+                <h4>Faire Studentenpreise</h4>
+                <p>Maßgeschneidert auf kleine Betriebe – keine überteuerten Agentur-Honorare.</p>
+              </div>
+            </div>
+            <div class="reason-item">
+              <span class="reason-icon">⏰</span>
+              <div>
+                <h4>Flexibel bei Einsatzzeiten</h4>
+                <p>Wir arbeiten morgens vor dem ersten Gast oder an Ruhetagen – ganz nach Ihrem Betrieb.</p>
+              </div>
+            </div>
+            <div class="reason-item">
+              <span class="reason-icon">🕯️</span>
+              <div>
+                <h4>Stilvoll statt kitschig</h4>
+                <p>Echtes Wiener Wohlfühl-Flair mit warmweißem Licht und harmonischen Naturfarben.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="why-us-cta-box">
+          <div class="cta-card-inner">
+            <span class="festive-sparkle">✨</span>
+            <h3>Jetzt Wunschtermin für November & Dezember sichern!</h3>
+            <p>Die Vorweihnachtszeit beginnt bald. Schreiben Sie uns einfach kurz auf WhatsApp – wir antworten umgehend.</p>
+            <a href="https://wa.me/4366565154851?text=Hallo%20Savelij%20%26%20Sebastian!%20Wir%20m%C3%B6chten%20einen%20Deko-Termin%20anfragen." target="_blank" rel="noopener" class="btn btn-whatsapp btn-block btn-lg">
+              <span class="wa-icon">💬</span>
+              <span>Jetzt per WhatsApp anfragen</span>
+            </a>
+            <span class="note">Unverbindlich & schnelle Kosteneinschätzung</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section faq-section" id="faq">
+    <div class="container faq-container">
+      <div class="section-header text-center">
+        <div class="section-label">HÄUFIGE FRAGEN</div>
+        <h2 class="section-title">Alles Wichtige auf einen Blick</h2>
+      </div>
+
+      <div class="faq-accordion" id="faq-accordion">
+        
+        <details class="faq-item" open>
+          <summary class="faq-question">
+            <span>Wer seid ihr und wie funktioniert die Zusammenarbeit?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>Wir sind Savelij und Sebastian, beide 20 Jahre alt und Studenten an der Uni Wien. Die Zusammenarbeit ist denkbar einfach: Sie schicken uns per WhatsApp ein paar Fotos Ihres Lokals, wir nennen Ihnen eine faire Pauschale und vereinbaren einen Termin, an dem wir alles zu zweit aufbauen.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>In welchen Wiener Bezirken bietet ihr den Service an?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>Wir sind in ganz Wien mobil unterwegs – vom 1. Bezirk (Innere Stadt) über Neubau, Josefstadt, Leopoldstadt bis hin zu Döbling, Hietzing und den Außenbezirken. Anfahrten in Wien-Umgebung (z. B. Mödling, Klosterneuburg) nach kurzer Rücksprache.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Bringt ihr die Dekoration mit oder nutzen wir vorhandenes Material?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>Beides ist möglich! Wenn Sie bereits Kisten mit eigener Dekoration im Lager haben, zaubern wir daraus ein neues, stimmiges Konzept. Falls nicht, bringen wir Lichterketten, Tannengirlanden, Kugeln und Bänder komplett mit.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Wie viel kostet die Dekoration im Schnitt?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>Da jedes Lokal unterschiedlich groß ist, kalkulieren wir fair nach tatsächlichem Aufwand. Kleinere Akzente oder ein Schaufenster starten oft schon ab 120–180 €. Nach einem kurzen Foto per WhatsApp nennen wir Ihnen sofort einen verbindlichen Pauschalpreis.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Könnt ihr auch außerhalb unserer Öffnungszeiten dekorieren?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>Sehr gerne! Wir möchten Ihren laufenden Gastronomie- oder Ladenbetrieb keinesfalls stören. Wir kommen morgens vor dem Aufsperren oder an Ihrem Ruhetag.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Baut ihr die Deko im Januar auch wieder ab?</span>
+            <span class="faq-icon">+</span>
+          </summary>
+          <div class="faq-answer">
+            <p>Ja, auf Wunsch vereinbaren wir direkt einen Termin für Anfang Januar. Wir bauen alles ordentlich ab, verpacken es platzsparend oder entsorgen Naturmaterialien sauber.</p>
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Direct WhatsApp Contact Hub ("Kontakt") - NO FORM, 100% DIRECT -->
+  <section class="section contact-section" id="kontakt">
+    <div class="container">
+      <div class="whatsapp-hub">
+        
+        <div class="whatsapp-hub-header text-center">
+          <div class="section-label">DIREKTER KONTAKT</div>
+          <h2 class="section-title">Lassen Sie uns Ihr Lokal verzaubern!</h2>
+          <p class="section-subtitle">
+            Kein Ausfüllen langer Formulare, kein bürokratischer Aufwand: Schreiben Sie uns einfach direkt eine kurze Nachricht auf WhatsApp.
+          </p>
+        </div>
+
+        <div class="whatsapp-hub-card">
+          <div class="hub-team-badge">
+            <img src="team.jpeg" alt="Savelij & Sebastian" class="hub-avatar">
+            <div>
+              <strong>Savelij & Sebastian</strong>
+              <span>Uni Wien Studenten · Deko-Service Wien</span>
+            </div>
+          </div>
+
+          <div class="hub-action-buttons" style="margin-top: 24px;">
+            <a href="https://wa.me/4366565154851?text=Hallo%20Savelij%20%26%20Sebastian!%20Wir%20haben%20ein%20Lokal%20in%20Wien%20und%20interessieren%20uns%20f%C3%BCr%20eine%20Weihnachtsdekoration." target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg hub-btn-main">
+              <span class="wa-icon" style="font-size: 1.4rem;">💬</span>
+              <span>Jetzt direkt Chat auf WhatsApp starten</span>
+            </a>
+          </div>
+
+          <div class="hub-steps">
+            <div class="hub-step-item">
+              <div class="step-badge">1</div>
+              <div>
+                <strong>Foto schicken</strong>
+                <p>1–2 Fotos vom Schaufenster oder Gastraum per WhatsApp senden.</p>
+              </div>
+            </div>
+            <div class="hub-step-item">
+              <div class="step-badge">2</div>
+              <div>
+                <strong>Pauschale besprechen</strong>
+                <p>Wir melden uns umgehend mit Ideen & einer fairen Pauschale.</p>
+              </div>
+            </div>
+            <div class="hub-step-item">
+              <div class="step-badge">3</div>
+              <div>
+                <strong>Wir dekorieren</strong>
+                <p>Wir rücken an und zaubern weihnachtlichen Glanz in Ihr Lokal!</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hub-footer-note">
+            <span>✨ Schnelle Antwort garantiert · Täglich erreichbar für Wiener Lokale</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="footer-left">
+        <div class="footer-logo">
+          <span class="logo-icon">🎄</span>
+          <span class="footer-brand">Wiener Weihnachtszauber</span>
+        </div>
+        <p class="footer-tagline">
+          Persönlicher Deko-Service von Savelij & Sebastian (Uni Wien) für Cafés, Boutiquen & Lokale in Wien.
+        </p>
+      </div>
+      <div class="footer-right">
+        <p class="footer-phone">
+          <a href="https://wa.me/4366565154851" target="_blank" rel="noopener" style="color: var(--gold-light); font-weight: 600;">💬 Direkt per WhatsApp schreiben →</a>
+        </p>
+        <p class="footer-copy">© 2026 Savelij & Sebastian · Wiener Weihnachtszauber 🇦🇹</p>
+        <p class="footer-subtext">Frohe Festtage und ein erfolgreiches Weihnachtsgeschäft!</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal for Fullsize Photo Viewing -->
+  <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog">
+    <div class="lightbox-backdrop" onclick="closeLightbox()"></div>
+    <div class="lightbox-container">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Schließen">✕</button>
+      <div class="lightbox-content">
+        <img id="lightbox-img" src="" alt="Großansicht Deko Beispiel">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+      </div>
+      <button class="lightbox-nav lightbox-prev" onclick="prevLightbox()" aria-label="Vorheriges Bild">❮</button>
+      <button class="lightbox-nav lightbox-next" onclick="nextLightbox()" aria-label="Nächstes Bild">❯</button>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Quick Button -->
+  <a href="https://wa.me/4366565154851?text=Hallo%20Savelij%20%26%20Sebastian!%20Wir%20haben%20ein%20Lokal%20in%20Wien%20und%20interessieren%20uns%20f%C3%BCr%20eine%20Weihnachtsdekoration." class="floating-whatsapp" target="_blank" rel="noopener" title="Direkt auf WhatsApp schreiben">
+    <span class="wa-float-icon">💬</span>
+    <span class="wa-float-text">WhatsApp</span>
+  </a>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
