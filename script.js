@@ -30,7 +30,8 @@ function initSnowfall() {
     height = canvas.height = window.innerHeight;
   });
 
-  const flakeCount = Math.min(Math.floor(width / 22), 65);
+  const isMobile = window.innerWidth < 768;
+  const flakeCount = isMobile ? Math.min(Math.floor(width / 20), 26) : Math.min(Math.floor(width / 22), 65);
   const flakes = [];
 
   for (let i = 0; i < flakeCount; i++) {
@@ -109,24 +110,41 @@ function initMobileMenu() {
   const navMenu = document.getElementById('nav-menu');
   if (!menuBtn || !navMenu) return;
 
-  menuBtn.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    menuBtn.classList.toggle('active');
+  function closeMenu() {
+    navMenu.classList.remove('active');
+    menuBtn.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function toggleMenu() {
+    const isActive = navMenu.classList.toggle('active');
+    menuBtn.classList.toggle('active', isActive);
+    document.body.style.overflow = isActive ? 'hidden' : '';
+  }
+
+  menuBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    toggleMenu();
   });
 
   // Close menu when clicking links
   navMenu.querySelectorAll('.nav-link, .nav-cta').forEach((link) => {
     link.addEventListener('click', () => {
-      navMenu.classList.remove('active');
-      menuBtn.classList.remove('active');
+      closeMenu();
     });
   });
 
   // Close on outside click
   document.addEventListener('click', (e) => {
     if (!navMenu.contains(e.target) && !menuBtn.contains(e.target) && navMenu.classList.contains('active')) {
-      navMenu.classList.remove('active');
-      menuBtn.classList.remove('active');
+      closeMenu();
+    }
+  });
+
+  // Close on Escape key
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+      closeMenu();
     }
   });
 }
@@ -193,12 +211,39 @@ function initLightbox() {
     if (e.key === 'ArrowRight') nextLightbox();
     if (e.key === 'ArrowLeft') prevLightbox();
   });
+
+  // Mobile Touch Swipe Support
+  let touchStartX = 0;
+  let touchStartY = 0;
+
+  modal.addEventListener('touchstart', (e) => {
+    if (e.touches.length === 1) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }
+  }, { passive: true });
+
+  modal.addEventListener('touchend', (e) => {
+    if (e.changedTouches.length === 1) {
+      const diffX = e.changedTouches[0].clientX - touchStartX;
+      const diffY = e.changedTouches[0].clientY - touchStartY;
+      // Trigger if swipe is primarily horizontal and > 40px
+      if (Math.abs(diffX) > 40 && Math.abs(diffX) > Math.abs(diffY)) {
+        if (diffX < 0) {
+          nextLightbox();
+        } else {
+          prevLightbox();
+        }
+      }
+    }
+  }, { passive: true });
 }
 
 function openLightbox(src, caption) {
   const modal = document.getElementById('lightbox-modal');
   const img = document.getElementById('lightbox-img');
   const captionEl = document.getElementById('lightbox-caption');
+  const counterEl = document.getElementById('lightbox-counter');
 
   const foundIndex = galleryImages.findIndex((item) => item.src === src);
   if (foundIndex !== -1) {
@@ -207,6 +252,9 @@ function openLightbox(src, caption) {
 
   img.src = src;
   captionEl.textContent = caption || '';
+  if (counterEl) {
+    counterEl.textContent = `${currentLightboxIndex + 1} / ${galleryImages.length}`;
+  }
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
 }
@@ -232,11 +280,15 @@ function updateLightboxContent() {
   const item = galleryImages[currentLightboxIndex];
   const img = document.getElementById('lightbox-img');
   const captionEl = document.getElementById('lightbox-caption');
+  const counterEl = document.getElementById('lightbox-counter');
   if (item && img && captionEl) {
     img.style.opacity = '0.3';
     setTimeout(() => {
       img.src = item.src;
       captionEl.textContent = item.title;
+      if (counterEl) {
+        counterEl.textContent = `${currentLightboxIndex + 1} / ${galleryImages.length}`;
+      }
       img.style.opacity = '1';
     }, 150);
   }
