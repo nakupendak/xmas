@@ -179,6 +179,20 @@ img {
   gap: 12px;
 }
 
+.logo-steph-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(197, 155, 39, 0.4));
+  transition: transform var(--transition-fast);
+  display: block;
+  flex-shrink: 0;
+}
+
+.brand-logo:hover .logo-steph-icon {
+  transform: scale(1.08) rotate(-2deg);
+}
+
 .logo-icon {
   font-size: 2rem;
   filter: drop-shadow(0 2px 4px rgba(197, 155, 39, 0.3));
@@ -407,6 +421,59 @@ img {
   max-width: 960px;
 }
 
+/* Hero Viennese Landmark Crest */
+.hero-crest {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.crest-line {
+  height: 1px;
+  width: 70px;
+  background: linear-gradient(to right, transparent, rgba(197, 155, 39, 0.5));
+}
+
+.crest-line.right {
+  background: linear-gradient(to left, transparent, rgba(197, 155, 39, 0.5));
+}
+
+.crest-icon-box {
+  width: 76px;
+  height: 76px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.crest-icon-box::before {
+  content: '';
+  position: absolute;
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(197, 155, 39, 0.2) 0%, rgba(197, 155, 39, 0) 72%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-steph-emblem {
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 4px 16px rgba(197, 155, 39, 0.42));
+  transition: transform var(--transition-normal);
+}
+
+.hero-steph-emblem:hover {
+  transform: scale(1.08) translateY(-3px);
+}
+
 .hero-badge {
   display: inline-flex;
   align-items: center;
@@ -516,10 +583,21 @@ img {
 }
 
 .gold-divider {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   color: var(--gold-primary);
-  letter-spacing: 6px;
   margin: 16px 0 24px 0;
   font-size: 1.1rem;
+}
+
+.divider-steph-img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+  filter: drop-shadow(0 1px 4px rgba(197, 155, 39, 0.3));
 }
 
 /* About Us Section */
@@ -1612,6 +1690,11 @@ img {
     font-size: 1.6rem;
   }
 
+  .logo-steph-icon {
+    width: 32px;
+    height: 32px;
+  }
+
   .logo-title {
     font-size: 1.2rem;
   }
@@ -1688,6 +1771,30 @@ img {
   /* Hero Section */
   .hero-section {
     padding: 44px 0 36px 0;
+  }
+
+  .hero-crest {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .crest-line {
+    width: 44px;
+  }
+
+  .crest-icon-box {
+    width: 58px;
+    height: 58px;
+  }
+
+  .crest-icon-box::before {
+    width: 52px;
+    height: 52px;
+  }
+
+  .hero-steph-emblem {
+    width: 52px;
+    height: 52px;
   }
 
   .hero-badge {
@@ -1832,6 +1939,12 @@ img {
   .gold-divider {
     margin: 10px 0 16px 0;
     font-size: 0.95rem;
+    gap: 8px;
+  }
+
+  .divider-steph-img {
+    width: 26px;
+    height: 26px;
   }
 
   /* Gallery Filters & Grid */
@@ -2235,6 +2348,11 @@ img {
 @media (max-width: 380px) {
   .container {
     padding: 0 12px;
+  }
+
+  .logo-steph-icon {
+    width: 32px;
+    height: 32px;
   }
 
   .logo-title {
