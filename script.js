@@ -189,8 +189,8 @@ function initGalleryFilter() {
    ------------------------------------------------------------------------- */
 const galleryImages = [
   { src: 'dek1.jpeg', title: 'Festlicher Eingangsbereich & Schaufensterbogen' },
-  { src: 'dek2.jpeg', title: 'Stimmungsvolle Tisch- und Thekendekoration für Gastronomie' },
-  { src: 'dek3.jpeg', title: 'Klassischer Weihnachtsbaum & Goldene Details' },
+  { src: 'dek2.jpeg', title: 'Festlicher Fassadenbogen, Schaufensterkranz & Tannen in Weidenkörben' },
+  { src: 'dek3.jpeg', title: 'Riesiger beleuchteter Statement-Kranz mit roter Schleife' },
   { src: 'dek4.jpg', title: 'Stimmungsvolle Kaffeebar- und Thekendekoration mit Tannengirlande' },
   { src: 'dek5.jpeg', title: 'Warme Lounge- und Kaminatmosphäre' },
   { src: 'dek5.jpg', title: 'Kompakte Schaufensterdekoration für Boutiquen' },
