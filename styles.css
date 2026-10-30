@@ -1622,6 +1622,386 @@ img {
   font-size: 1.3rem;
 }
 
+/* ==========================================================================
+   WhatsApp Choice Modal & Hub Contacts (Savelij & Sebastian)
+   ========================================================================== */
+
+.wa-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+.wa-modal.active {
+  display: flex;
+}
+
+.wa-modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 28, 20, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  animation: waFadeIn 0.25s ease-out;
+}
+
+.wa-modal-dialog {
+  position: relative;
+  z-index: 2001;
+  background: #FFFFFF;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 490px;
+  padding: 32px 28px 24px 28px;
+  box-shadow: 0 25px 60px rgba(15, 28, 20, 0.35), 0 0 0 1px rgba(197, 155, 39, 0.25);
+  animation: waScaleIn 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  box-sizing: border-box;
+}
+
+@keyframes waFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes waScaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.wa-modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.wa-modal-close:hover {
+  background: #ECE6DE;
+  color: var(--pine-green);
+  transform: rotate(90deg);
+}
+
+.wa-modal-header {
+  text-align: center;
+  margin-bottom: 22px;
+}
+
+.wa-modal-icon-badge {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 12px auto;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.35);
+}
+
+.wa-modal-icon-badge .wa-icon-large {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.wa-modal-title {
+  font-family: var(--font-serif);
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--pine-green);
+  margin-bottom: 6px;
+}
+
+.wa-modal-desc {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
+.wa-modal-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.wa-option-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: var(--bg-primary);
+  border: 1.5px solid var(--border-gold);
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-fast);
+  position: relative;
+  overflow: hidden;
+}
+
+.wa-option-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 4px;
+  background: #25D366;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.wa-option-card:hover {
+  background: #FFFFFF;
+  border-color: #25D366;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.16), 0 4px 12px rgba(27, 59, 43, 0.06);
+}
+
+.wa-option-card:hover::after {
+  opacity: 1;
+}
+
+.wa-option-avatar {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1B3B2B, #2A5641);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.3rem;
+  border: 2px solid var(--gold-primary);
+  flex-shrink: 0;
+}
+
+.wa-option-avatar.sebastian {
+  background: linear-gradient(135deg, #2A5641, #1B3B2B);
+}
+
+.online-indicator {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  width: 12px;
+  height: 12px;
+  background: #25D366;
+  border: 2px solid #FFFFFF;
+  border-radius: 50%;
+}
+
+.wa-option-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.wa-option-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wa-option-name {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--pine-green);
+}
+
+.wa-badge-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 2px 7px;
+  background: rgba(197, 155, 39, 0.15);
+  color: #8A6508;
+  border-radius: 100px;
+}
+
+.wa-option-phone {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-top: 2px;
+  letter-spacing: 0.2px;
+}
+
+.wa-option-action {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #20BA5A;
+  margin-top: 4px;
+}
+
+.wa-option-btn-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+  transition: transform var(--transition-fast);
+}
+
+.wa-option-card:hover .wa-option-btn-circle {
+  transform: scale(1.12);
+  background: #20BA5A;
+}
+
+.wa-modal-footer {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-light);
+  line-height: 1.4;
+}
+
+/* Contact Hub 2-Contact Grid */
+.hub-team-contacts {
+  margin-top: 24px;
+  width: 100%;
+}
+
+.hub-contacts-lead {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--pine-green);
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.hub-contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.hub-contact-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: #FFFFFF;
+  border: 1.5px solid var(--border-gold);
+  border-radius: 18px;
+  text-decoration: none;
+  color: inherit;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+}
+
+.hub-contact-card:hover {
+  border-color: #25D366;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(37, 211, 102, 0.2);
+}
+
+.hub-contact-card .hub-card-avatar {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1B3B2B, #2A5641);
+  color: var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.2rem;
+  border: 2px solid var(--gold-primary);
+  flex-shrink: 0;
+}
+
+.hub-contact-card .hub-card-avatar.sebastian {
+  background: linear-gradient(135deg, #2A5641, #1B3B2B);
+}
+
+.hub-card-details {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hub-card-name-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hub-card-name-row strong {
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
+  color: var(--pine-green);
+}
+
+.hub-card-tag {
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 2px 6px;
+  background: rgba(197, 155, 39, 0.15);
+  color: #8A6508;
+  border-radius: 100px;
+}
+
+.hub-card-phone {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.hub-card-action {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #20BA5A;
+  margin-top: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
 /* Responsive Styles */
 @media (max-width: 1024px) {
   .hero-highlights {
@@ -2281,6 +2661,32 @@ img {
   .lightbox-next {
     right: 24%;
     transform: translateX(50%);
+  }
+
+  /* WhatsApp Modal & Hub Contacts Mobile */
+  .wa-modal-dialog {
+    padding: 24px 18px 20px 18px;
+    border-radius: 20px;
+    max-width: 95vw;
+  }
+
+  .wa-modal-title {
+    font-size: 1.5rem;
+  }
+
+  .wa-modal-icon-badge {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+  }
+
+  .wa-modal-icon-badge .wa-icon-large {
+    font-size: 24px;
+  }
+
+  .hub-contacts-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 
   /* Floating WhatsApp Button */

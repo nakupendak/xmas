@@ -50,7 +50,7 @@
         <a href="#leistungen" class="nav-link">Leistungen</a>
         <a href="#ablauf" class="nav-link">Ablauf</a>
         <a href="#faq" class="nav-link">FAQ</a>
-        <a href="https://wa.me/4366565154851?text=Hallo%20Savelij%20%26%20Sebastian!%20Wir%20haben%20ein%20Lokal%20in%20Wien%20und%20interessieren%20uns%20f%C3%BCr%20eine%20Weihnachtsdekoration." target="_blank" rel="noopener" class="btn btn-whatsapp nav-cta">
+        <a href="#wa-choice-modal" onclick="openWhatsAppModal(event);" class="btn btn-whatsapp nav-cta" data-wa-modal-trigger="true">
           <span>💬 WhatsApp Chat</span>
         </a>
       </nav>
@@ -93,7 +93,7 @@
       </p>
 
       <div class="hero-actions">
-        <a href="https://wa.me/4366565154851?text=Hallo%20Savelij%20%26%20Sebastian!%20Wir%20haben%20ein%20Lokal%20in%20Wien%20und%20interessieren%20uns%20f%C3%BCr%20eine%20Weihnachtsdekoration." target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+        <a href="#wa-choice-modal" onclick="openWhatsAppModal(event);" class="btn btn-whatsapp btn-lg" data-wa-modal-trigger="true">
           <span class="wa-icon">💬</span>
           <span class="btn-text">Direkt auf WhatsApp schreiben</span>
           <span class="btn-arrow">→</span>
@@ -287,21 +287,21 @@
           </div>
         </article>
 
-        <!-- Example 4: dek4 -->
-        <article class="gallery-card" data-category="schaufenster">
-          <div class="card-image-box" onclick="openLightbox('dek4.jpeg', 'Elegante Fensterbeleuchtung & Sterne')">
-            <img src="dek4.jpeg" alt="Beispiel 4: Schaufenster Beleuchtung und Sterne" loading="lazy">
+        <!-- Example 4: dek4 (Kaffeebar & Theke) -->
+        <article class="gallery-card" data-category="innenraum">
+          <div class="card-image-box" onclick="openLightbox('dek4.jpg', 'Stimmungsvolle Kaffeebar- und Thekendekoration')">
+            <img src="dek4.jpg" alt="Beispiel 4: Festliche Kaffeebar und Thekendekoration mit Tannengirlande und Lichterkette" loading="lazy">
             <div class="card-overlay">
               <span class="zoom-btn" title="Großansicht">🔍 Vergrößern</span>
             </div>
-            <div class="card-tag">Schaufenster</div>
+            <div class="card-tag">Kaffeebar & Theke</div>
           </div>
           <div class="card-content">
-            <h3 class="card-title">Strahlende Schaufenster-Arrangements</h3>
-            <p class="card-desc">Beleuchtete Sterne, hängende Ornamente und zarte Winterdetails, die auch aus der Ferne im Dunkeln glänzen.</p>
+            <h3 class="card-title">Festliche Kaffeebar- & Thekendeko</h3>
+            <p class="card-desc">Dichte Tannengirlande mit warmen Lichtern, rotem Schmuck, Tischbäumchen und verspielten Winterdetails für ein einladendes Ambiente.</p>
             <div class="card-meta">
-              <span class="meta-tag">✨ Maximale Fernwirkung</span>
-              <span class="meta-tag">🛍️ Perfekt für Boutiquen</span>
+              <span class="meta-tag">☕ Ideal für Kaffeebars</span>
+              <span class="meta-tag">✨ Warme Beleuchtung</span>
             </div>
           </div>
         </article>
@@ -557,7 +557,7 @@
             <span class="festive-sparkle">✨</span>
             <h3>Jetzt Wunschtermin für November & Dezember sichern!</h3>
             <p>Die Vorweihnachtszeit beginnt bald. Schreiben Sie uns einfach kurz auf WhatsApp – wir antworten umgehend.</p>
-            <a href="https://wa.me/4366565154851?text=Hallo%20Savelij%20%26%20Sebastian!%20Wir%20m%C3%B6chten%20einen%20Deko-Termin%20anfragen." target="_blank" rel="noopener" class="btn btn-whatsapp btn-block btn-lg">
+            <a href="#wa-choice-modal" onclick="openWhatsAppModal(event);" class="btn btn-whatsapp btn-block btn-lg" data-wa-modal-trigger="true">
               <span class="wa-icon">💬</span>
               <span>Jetzt per WhatsApp anfragen</span>
             </a>
@@ -664,11 +664,37 @@
             </div>
           </div>
 
-          <div class="hub-action-buttons" style="margin-top: 24px;">
-            <a href="https://wa.me/4366565154851?text=Hallo%20Savelij%20%26%20Sebastian!%20Wir%20haben%20ein%20Lokal%20in%20Wien%20und%20interessieren%20uns%20f%C3%BCr%20eine%20Weihnachtsdekoration." target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg hub-btn-main">
-              <span class="wa-icon" style="font-size: 1.4rem;">💬</span>
-              <span>Jetzt direkt Chat auf WhatsApp starten</span>
-            </a>
+          <div class="hub-team-contacts">
+            <p class="hub-contacts-lead">Wählen Sie Ihren persönlichen Ansprechpartner:</p>
+            <div class="hub-contacts-grid">
+              <a href="https://wa.me/4366565154851?text=Hallo%20Savelij!%20Wir%20haben%20ein%20Lokal%20in%20Wien%20und%20interessieren%20uns%20f%C3%BCr%20eine%20Weihnachtsdekoration." target="_blank" rel="noopener" class="hub-contact-card" data-direct-wa="true">
+                <div class="hub-card-avatar">
+                  <span>S</span>
+                  <span class="online-indicator" title="Online auf WhatsApp"></span>
+                </div>
+                <div class="hub-card-details">
+                  <div class="hub-card-name-row">
+                    <strong>Savelij</strong>
+                  </div>
+                  <span class="hub-card-phone">+43 665 65154851</span>
+                  <span class="hub-card-action">💬 Direkt chatten →</span>
+                </div>
+              </a>
+
+              <a href="https://wa.me/4367763151886?text=Hallo%20Sebastian!%20Wir%20haben%20ein%20Lokal%20in%20Wien%20und%20interessieren%20uns%20f%C3%BCr%20eine%20Weihnachtsdekoration." target="_blank" rel="noopener" class="hub-contact-card" data-direct-wa="true">
+                <div class="hub-card-avatar sebastian">
+                  <span>S</span>
+                  <span class="online-indicator" title="Online auf WhatsApp"></span>
+                </div>
+                <div class="hub-card-details">
+                  <div class="hub-card-name-row">
+                    <strong>Sebastian</strong>
+                  </div>
+                  <span class="hub-card-phone">+43 677 63151886</span>
+                  <span class="hub-card-action">💬 Direkt chatten →</span>
+                </div>
+              </a>
+            </div>
           </div>
 
           <div class="hub-steps">
@@ -718,13 +744,69 @@
       </div>
       <div class="footer-right">
         <p class="footer-phone">
-          <a href="https://wa.me/4366565154851" target="_blank" rel="noopener" style="color: var(--gold-light); font-weight: 600;">💬 Direkt per WhatsApp schreiben →</a>
+          <a href="#wa-choice-modal" onclick="openWhatsAppModal(event);" style="color: var(--gold-light); font-weight: 600;" data-wa-modal-trigger="true">💬 Direkt per WhatsApp schreiben (Savelij & Sebastian) →</a>
         </p>
         <p class="footer-copy">© 2026 Savelij & Sebastian · Wiener Weihnachtszauber 🇦🇹</p>
         <p class="footer-subtext">Frohe Festtage und ein erfolgreiches Weihnachtsgeschäft!</p>
       </div>
     </div>
   </footer>
+
+  <!-- WhatsApp Choice Modal (Savelij & Sebastian) -->
+  <div id="wa-choice-modal" class="wa-modal" aria-hidden="true" role="dialog" aria-labelledby="wa-modal-title">
+    <div class="wa-modal-backdrop" onclick="closeWhatsAppModal()"></div>
+    <div class="wa-modal-dialog">
+      <button class="wa-modal-close" onclick="closeWhatsAppModal()" aria-label="Schließen">✕</button>
+      
+      <div class="wa-modal-header">
+        <div class="wa-modal-icon-badge">
+          <span class="wa-icon-large">💬</span>
+        </div>
+        <h3 id="wa-modal-title" class="wa-modal-title">Mit wem möchten Sie chatten?</h3>
+        <p class="wa-modal-desc">Wählen Sie Ihren persönlichen Ansprechpartner für Wiener Weihnachtszauber:</p>
+      </div>
+
+      <div class="wa-modal-options">
+        <!-- Savelij Card -->
+        <a href="https://wa.me/4366565154851?text=Hallo%20Savelij!%20Wir%20haben%20ein%20Lokal%20in%20Wien%20und%20interessieren%20uns%20f%C3%BCr%20eine%20Weihnachtsdekoration." 
+           target="_blank" rel="noopener" class="wa-option-card" data-direct-wa="true">
+          <div class="wa-option-avatar">
+            <span>S</span>
+            <span class="online-indicator" title="Online auf WhatsApp"></span>
+          </div>
+          <div class="wa-option-info">
+            <div class="wa-option-name-row">
+              <strong class="wa-option-name">Savelij</strong>
+            </div>
+            <span class="wa-option-phone">+43 665 65154851</span>
+            <span class="wa-option-action">Auf WhatsApp öffnen →</span>
+          </div>
+          <div class="wa-option-btn-circle">💬</div>
+        </a>
+
+        <!-- Sebastian Card -->
+        <a href="https://wa.me/4367763151886?text=Hallo%20Sebastian!%20Wir%20haben%20ein%20Lokal%20in%20Wien%20und%20interessieren%20uns%20f%C3%BCr%20eine%20Weihnachtsdekoration." 
+           target="_blank" rel="noopener" class="wa-option-card" data-direct-wa="true">
+          <div class="wa-option-avatar sebastian">
+            <span>S</span>
+            <span class="online-indicator" title="Online auf WhatsApp"></span>
+          </div>
+          <div class="wa-option-info">
+            <div class="wa-option-name-row">
+              <strong class="wa-option-name">Sebastian</strong>
+            </div>
+            <span class="wa-option-phone">+43 677 63151886</span>
+            <span class="wa-option-action">Auf WhatsApp öffnen →</span>
+          </div>
+          <div class="wa-option-btn-circle">💬</div>
+        </a>
+      </div>
+
+      <div class="wa-modal-footer">
+        <span>✨ Schnelle Antwort garantiert · Täglich erreichbar</span>
+      </div>
+    </div>
+  </div>
 
   <!-- Lightbox Modal for Fullsize Photo Viewing -->
   <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog">
@@ -742,7 +824,7 @@
   </div>
 
   <!-- Floating WhatsApp Quick Button -->
-  <a href="https://wa.me/4366565154851?text=Hallo%20Savelij%20%26%20Sebastian!%20Wir%20haben%20ein%20Lokal%20in%20Wien%20und%20interessieren%20uns%20f%C3%BCr%20eine%20Weihnachtsdekoration." class="floating-whatsapp" target="_blank" rel="noopener" title="Direkt auf WhatsApp schreiben">
+  <a href="#wa-choice-modal" onclick="openWhatsAppModal(event);" class="floating-whatsapp" data-wa-modal-trigger="true" title="Direkt auf WhatsApp schreiben">
     <span class="wa-float-icon">💬</span>
     <span class="wa-float-text">WhatsApp</span>
   </a>

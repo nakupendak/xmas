@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGalleryFilter();
   initLightbox();
   initNavbarScroll();
+  initWhatsAppModal();
 });
 
 /* -------------------------------------------------------------------------
@@ -190,7 +191,7 @@ const galleryImages = [
   { src: 'dek1.jpeg', title: 'Festlicher Eingangsbereich & Schaufensterbogen' },
   { src: 'dek2.jpeg', title: 'Stimmungsvolle Tisch- und Thekendekoration für Gastronomie' },
   { src: 'dek3.jpeg', title: 'Klassischer Weihnachtsbaum & Goldene Details' },
-  { src: 'dek4.jpeg', title: 'Strahlende Schaufensterbeleuchtung mit Weihnachtssternen' },
+  { src: 'dek4.jpg', title: 'Stimmungsvolle Kaffeebar- und Thekendekoration mit Tannengirlande' },
   { src: 'dek5.jpeg', title: 'Warme Lounge- und Kaminatmosphäre' },
   { src: 'dek5.jpg', title: 'Kompakte Schaufensterdekoration für Boutiquen' },
   { src: 'dek6.jpg', title: 'Hängende Tannengirlanden & Deckenakzente' },
@@ -315,3 +316,60 @@ function initNavbarScroll() {
     }
   });
 }
+
+/* -------------------------------------------------------------------------
+   6. WhatsApp Choice Modal (Savelij & Sebastian)
+   ------------------------------------------------------------------------- */
+function initWhatsAppModal() {
+  const modal = document.getElementById('wa-choice-modal');
+  if (!modal) return;
+
+  // Intercept all general WhatsApp buttons (excluding direct links with data-direct-wa)
+  const triggers = document.querySelectorAll(
+    'a.btn-whatsapp:not([data-direct-wa]), a.floating-whatsapp, [data-wa-modal-trigger]'
+  );
+
+  triggers.forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openWhatsAppModal();
+    });
+  });
+
+  // When clicking an option card inside the modal, briefly allow click through then close modal
+  const optionCards = modal.querySelectorAll('.wa-option-card');
+  optionCards.forEach((card) => {
+    card.addEventListener('click', () => {
+      setTimeout(closeWhatsAppModal, 300);
+    });
+  });
+
+  // Close on Escape key
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeWhatsAppModal();
+    }
+  });
+}
+
+function openWhatsAppModal(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  const modal = document.getElementById('wa-choice-modal');
+  if (!modal) return;
+  modal.classList.add('active');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeWhatsAppModal() {
+  const modal = document.getElementById('wa-choice-modal');
+  if (!modal) return;
+  modal.classList.remove('active');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+// Expose WhatsApp modal functions globally for inline onclick handlers
+window.openWhatsAppModal = openWhatsAppModal;
+window.closeWhatsAppModal = closeWhatsAppModal;
+
