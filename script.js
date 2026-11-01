@@ -193,7 +193,7 @@ const galleryImages = [
   { src: 'dek2.jpg', title: 'Prachtvoller Portalbogen mit roten Festgirlanden & Gehsteigtannen' },
   { src: 'dek3.jpeg', title: 'Beleuchtete Girlanden an Holzsäulen & Deckenbalken' },
   { src: 'dek4.jpg', title: 'XXL-Samtschleife mit fließenden Bändern & beleuchteten Korbtannen' },
-  { src: 'dek5.jpg', title: 'Geschmückte Design-Ringleuchten & hängende Akzente' },
+  { src: 'dek5.jpeg', title: 'Geschmückte Design-Ringleuchten & hängende Akzente' },
   { src: 'dek6.jpg', title: 'Dichte Türeingang-Girlande mit roten Weihnachtskugeln' }
 ];
 
