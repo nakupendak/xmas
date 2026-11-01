@@ -165,8 +165,9 @@ function initGalleryFilter() {
       const filter = btn.dataset.filter;
 
       cards.forEach((card) => {
-        const category = card.dataset.category;
-        if (filter === 'all' || category === filter) {
+        const category = card.dataset.category || '';
+        const categories = category.split(/\s+/);
+        if (filter === 'all' || categories.includes(filter)) {
           card.style.display = 'flex';
           setTimeout(() => {
             card.style.opacity = '1';
@@ -188,15 +189,12 @@ function initGalleryFilter() {
    4. Gallery Lightbox Modal
    ------------------------------------------------------------------------- */
 const galleryImages = [
-  { src: 'dek1.jpeg', title: 'Festlicher Eingangsbereich & Schaufensterbogen' },
-  { src: 'dek2.jpeg', title: 'Festlicher Fassadenbogen, Schaufensterkranz & Tannen in Weidenkörben' },
-  { src: 'dek3.jpeg', title: 'Riesiger beleuchteter Statement-Kranz mit roter Schleife' },
-  { src: 'dek4.jpg', title: 'Stimmungsvolle Kaffeebar- und Thekendekoration mit Tannengirlande' },
-  { src: 'dek5.jpeg', title: 'Warme Lounge- und Kaminatmosphäre' },
-  { src: 'dek5.jpg', title: 'Kompakte Schaufensterdekoration für Boutiquen' },
-  { src: 'dek6.jpg', title: 'Hängende Tannengirlanden & Deckenakzente' },
-  { src: 'dek7.jpg', title: 'Natürlicher Tannen- & Holzcharme' },
-  { src: 'dek9.jpg', title: 'Stimmungsvolle Gastraum- und Tischdekoration' }
+  { src: 'dek1.jpeg', title: 'Festlicher Gastraum mit Lichtervorhang & Tannengirlanden' },
+  { src: 'dek2.jpg', title: 'Prachtvoller Portalbogen mit roten Festgirlanden & Gehsteigtannen' },
+  { src: 'dek3.jpeg', title: 'Beleuchtete Girlanden an Holzsäulen & Deckenbalken' },
+  { src: 'dek4.jpg', title: 'XXL-Samtschleife mit fließenden Bändern & beleuchteten Korbtannen' },
+  { src: 'dek5.jpg', title: 'Geschmückte Design-Ringleuchten & hängende Akzente' },
+  { src: 'dek6.jpg', title: 'Dichte Türeingang-Girlande mit roten Weihnachtskugeln' }
 ];
 
 let currentLightboxIndex = 0;
